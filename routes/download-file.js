@@ -2,8 +2,6 @@ const ytdl = require('ytdl-core');
 const ffmpeg = require("fluent-ffmpeg");
 const stream = require("stream");
 
-ffmpeg.setFfmpegPath("C:\\ffmpeg\\bin\\ffmpeg.exe");
-
 module.exports = async (req, res) => {
     const videoUrl = req.body.url;
 
