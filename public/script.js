@@ -4,9 +4,9 @@ document
         e.preventDefault();
         const url = document.getElementById("url").value;
         const loader = document.getElementById("loader");
-        loader.style.display = "flex"; // Mostrar el loader (cambiar de "block" a "flex" para flexbox)
+        loader.style.display = "flex"; // Mostrar el loader
 
-        fetch("/api/download", {
+        fetch("/routes/download", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -17,18 +17,34 @@ document
                 if (!response.ok) {
                     throw new Error("Network response was not ok.");
                 }
-                return response.blob();
+                return response.json();
             })
-            .then((blob) => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.style.display = "none";
-                a.href = url;
-                a.download = "audio.mp3";
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                loader.style.display = "none"; // Ocultar el loader
+            .then((data) => {
+                const fileName = data.fileName;
+                return fetch("/routes/download-file", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ url }),
+                })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok.");
+                    }
+                    return response.blob();
+                })
+                .then((blob) => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.style.display = "none";
+                    a.href = url;
+                    a.download = fileName; // Usar el nombre del archivo recibido
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    loader.style.display = "none"; // Ocultar el loader
+                });
             })
             .catch((err) => {
                 console.error("Error:", err);

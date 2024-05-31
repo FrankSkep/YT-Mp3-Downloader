@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const download = require("./api/download");
+const download = require("./routes/download");
+const downloadFile = require("./routes/download-file");
 const path = require("path");
 
 const app = express();
@@ -12,7 +13,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Ruta para el API de descarga
-app.post("/api/download", download);
+app.post("/routes/download", download);
+app.post("/routes/download-file", downloadFile);
 
 // Ruta para servir index.html en la raíz
 app.get("/", (req, res) => {
