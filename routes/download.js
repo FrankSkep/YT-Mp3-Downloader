@@ -51,11 +51,9 @@ module.exports = async (req, res) => {
                                 "Error al descargar el archivo:",
                                 err
                             );
-                            return res
-                                .status(500)
-                                .send({
-                                    error: "Error al descargar el archivo",
-                                });
+                            return res.status(500).send({
+                                error: "Error al descargar el archivo",
+                            });
                         }
                         fs.unlinkSync(videoFilePath); // Elimina el archivo temporal
                         fs.unlinkSync(audioFilePath); // Elimina el archivo temporal

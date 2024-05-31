@@ -56,16 +56,32 @@ button:hover {
 }
 
 .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loader .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #000;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 24px;
+    height: 24px;
     animation: spin 1s linear infinite;
-    margin: 20px auto 0;
+    margin-right: 10px; /* Separación entre el spinner y el texto */
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader span {
+    font-size: 16px;
+    color: #000;
 }

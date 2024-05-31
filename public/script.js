@@ -4,7 +4,7 @@ document
         e.preventDefault();
         const url = document.getElementById("url").value;
         const loader = document.getElementById("loader");
-        loader.style.display = "block"; // Mostrar el loader
+        loader.style.display = "flex"; // Mostrar el loader (cambiar de "block" a "flex" para flexbox)
 
         fetch("/api/download", {
             method: "POST",
@@ -15,7 +15,7 @@ document
         })
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok.');
+                    throw new Error("Network response was not ok.");
                 }
                 return response.blob();
             })
@@ -32,7 +32,9 @@ document
             })
             .catch((err) => {
                 console.error("Error:", err);
-                alert("Error al descargar el archivo. Por favor, intenta de nuevo.");
+                alert(
+                    "Error al descargar el archivo. Por favor, intenta de nuevo."
+                );
                 loader.style.display = "none"; // Ocultar el loader en caso de error
             });
     });
