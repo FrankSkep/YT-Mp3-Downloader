@@ -37,4 +37,4 @@ El proyecto está organizado en varios directorios y archivos que cumplen difere
     *   **`package.json`**: Contiene las dependencias del proyecto y los scripts de npm.
     *   **`README.md`**: Contiene la documentación del proyecto.
 
-Cada archivo y directorio tiene un propósito específico en el proyecto, facilitando el mantenimiento y la comprensión del código.
+Cada archivo y directorio tiene un propósito específico en el proyecto, facilitando el mantenimiento, escalabilidad y comprensión del código.
