@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const download = require("./routes/download");
-const downloadFile = require("./routes/download-file");
+const download = require("./routes/vid-metadata");
+const downloadFile = require("./routes/mp3-download");
 const path = require("path");
 
 const app = express();
