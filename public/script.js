@@ -6,7 +6,7 @@ document
         const bitrate = document.getElementById("bitrate").value;
         const loader = document.getElementById("loader");
         const progress = document.querySelector(".progress"); // Seleccionar la barra de progreso
-        loader.style.display = "flex"; // Mostrar el loader
+        loader.style.display = "block"; // Mostrar el loader
 
         fetch("/routes/download", {
             method: "POST",
