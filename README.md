@@ -6,6 +6,8 @@ Aplicación web que permite descargar videos de youtube en formato MP3 en difere
    <img src="https://raw.githubusercontent.com/FrankSkep/YT-Mp3-Downloader/main/public/preview.png" alt="Interfaz">
 </div>
 
+---
+
 ## Tecnologías Utilizadas
 
 ### Frontend
@@ -21,6 +23,8 @@ Aplicación web que permite descargar videos de youtube en formato MP3 en difere
 - **ytdl-core**: Se utiliza para obtener información y descargar videos de YouTube.
 - **fluent-ffmpeg**: Se utiliza para convertir videos descargados a archivos de audio MP3.
 - **stream**: Se utiliza para transmitir el audio procesado al cliente.
+
+---
 
 ## Estructura del Proyecto
 
