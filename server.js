@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const download = require("./routes/vid-metadata");
-const downloadFile = require("./routes/mp3-download");
+const videoMetadata = require("./routes/vid-metadata");
+const mp3FileDownload = require("./routes/mp3-download");
 const path = require("path");
 
 const app = express();
@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Ruta para obtener información del video
-app.post("/routes/vid-metadata", download);
+app.post("/routes/vid-metadata", videoMetadata);
 
 // Ruta para el API de descarga
-app.post("/routes/mp3-download", downloadFile);
+app.post("/routes/mp3-download", mp3FileDownload);
 
 // Ruta para servir index.html en la raíz
 app.get("/", (req, res) => {

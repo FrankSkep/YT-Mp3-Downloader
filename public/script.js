@@ -3,7 +3,7 @@ let videoTitle; // Variable para almacenar el título del video
 document.getElementById("url").addEventListener("input", function (e) {
     const url = e.target.value;
     if (url) {
-        fetch("/routes/video-info", {
+        fetch("/routes/vid-metadata", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,7 +40,7 @@ document.getElementById("download-form").addEventListener("submit", function (e)
     const loader = document.getElementById("loader");
     loader.style.display = "block"; // Mostrar el loader
 
-    fetch("/routes/download-file", {
+    fetch("/routes/mp3-download", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
