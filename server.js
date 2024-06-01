@@ -12,11 +12,13 @@ app.use(bodyParser.json());
 // Servir archivos estáticos desde la carpeta public
 app.use(express.static(path.join(__dirname, "public")));
 
+// Ruta para obtener información del video
+app.post("/routes/video-info", download);
+
 // Ruta para el API de descarga
-app.post("/routes/download", download);
 app.post("/routes/download-file", downloadFile);
 
-// Ruta para servir index.html en la raiz
+// Ruta para servir index.html en la raíz
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });

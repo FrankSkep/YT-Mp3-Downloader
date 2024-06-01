@@ -1,19 +1,12 @@
-document
-    .getElementById("download-form")
-    .addEventListener("submit", function (e) {
-        e.preventDefault();
-        const url = document.getElementById("url").value;
-        const bitrate = document.getElementById("bitrate").value;
-        const loader = document.getElementById("loader");
-        const progress = document.querySelector(".progress"); // Seleccionar la barra de progreso
-        loader.style.display = "block"; // Mostrar el loader
-
-        fetch("/routes/download", {
+document.getElementById("url").addEventListener("input", function (e) {
+    const url = e.target.value;
+    if (url) {
+        fetch("/routes/video-info", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ url, bitrate }),
+            body: JSON.stringify({ url }),
         })
         .then((response) => {
             if (!response.ok) {
@@ -22,39 +15,55 @@ document
             return response.json();
         })
         .then((data) => {
-            const fileName = data.fileName;
-
-            return fetch("/routes/download-file", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ url, bitrate }),
-            })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok.");
-                }
-                return response.blob();
-            })
-            .then((blob) => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.style.display = "none";
-                a.href = url;
-                a.download = fileName;
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                loader.style.display = "none"; // Ocultar el loader
-                progress.style.display = 'none'; // Ocultar la barra de progreso al finalizar
-            });
+            const videoInfoDiv = document.getElementById("video-info");
+            videoInfoDiv.innerHTML = `
+                <img src="${data.thumbnail}" alt="Thumbnail" style="width: 100px; height: auto;" />
+                <p>${data.title}</p>
+            `;
+            videoInfoDiv.style.display = "block";
         })
         .catch((err) => {
             console.error("Error:", err);
-            alert(
-                "Error al descargar el archivo. Por favor, intenta de nuevo."
-            );
-            loader.style.display = "none"; // Ocultar el loader en caso de error
         });
+    } else {
+        document.getElementById("video-info").style.display = "none";
+    }
+});
+
+document.getElementById("download-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const url = document.getElementById("url").value;
+    const bitrate = document.getElementById("bitrate").value;
+    const loader = document.getElementById("loader");
+    loader.style.display = "block"; // Mostrar el loader
+
+    fetch("/routes/download-file", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url, bitrate }),
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok.");
+        }
+        return response.blob();
+    })
+    .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = `${new Date().getTime()}.mp3`; // Generar nombre de archivo temporal
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        loader.style.display = "none"; // Ocultar el loader
+    })
+    .catch((err) => {
+        console.error("Error:", err);
+        alert("Error al descargar el archivo. Por favor, intenta de nuevo.");
+        loader.style.display = "none"; // Ocultar el loader en caso de error
     });
+});
