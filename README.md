@@ -2,6 +2,8 @@
 
 Aplicación web que te permite descargar archivos de audio en formato MP3 desde videos de YouTube.
 
+![Texto alternativo](public\preview.png)
+
 ## Tecnologías Utilizadas
 
 ### Frontend
