@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Ruta para obtener información del video
-app.post("/routes/video-info", download);
+app.post("/routes/vid-metadata", download);
 
 // Ruta para el API de descarga
-app.post("/routes/download-file", downloadFile);
+app.post("/routes/mp3-download", downloadFile);
 
 // Ruta para servir index.html en la raíz
 app.get("/", (req, res) => {
