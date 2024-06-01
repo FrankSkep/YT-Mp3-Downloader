@@ -1,4 +1,4 @@
-let videoTitle; // Variable para almacenar el título del video temporalmente
+let videoTitle; // Variable para almacenar el título del video
 
 document.getElementById("url").addEventListener("input", function (e) {
     const url = e.target.value;

@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
         const audioStream = new stream.PassThrough();
 
         ffmpeg(ytdl(videoUrl, { filter: 'audioonly' }))
-            .audioBitrate(audioBitrate) // Configurar el bitrate del audio
+            .audioBitrate(audioBitrate) // Config. el bitrate del audio
             .format('mp3')
             .pipe(audioStream)
             .pipe(res)

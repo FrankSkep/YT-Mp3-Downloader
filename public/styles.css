@@ -1,4 +1,3 @@
-/* Estilizar la barra de progreso */
 .progress {
     width: 100%;
     height: 20px;
@@ -12,19 +11,20 @@
     height: 100%;
     background-color: #007bff;
     border-radius: 10px;
-    animation: moveProgress 2s linear infinite; /* Animación de movimiento continuo */
+    animation: moveProgress 4s linear infinite; /* Animación de movimiento continuo */
+    background-image: linear-gradient(45deg, transparent 80%, rgba(255, 255, 255, 0.5) 80%);
+    background-size: 20px 20px; /* Ajusta el tamaño de las líneas */
 }
 
 @keyframes moveProgress {
     0% {
-        transform: translateX(-100%); /* Mover la barra completamente a la izquierda */
+        transform: translateX(-100%);
     }
     100% {
-        transform: translateX(100%); /* Mover la barra completamente a la derecha */
+        transform: translateX(100%);
     }
 }
 
-/* Estilos adicionales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
