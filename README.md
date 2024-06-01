@@ -2,7 +2,9 @@
 
 Aplicación web que te permite descargar archivos de audio en formato MP3 desde videos de YouTube.
 
-<div align="center">![Imagen de la interfaz](https://raw.githubusercontent.com/FrankSkep/YT-Mp3-Downloader/main/public/preview.png)</div>
+<div align="center">
+   <img src="https://raw.githubusercontent.com/FrankSkep/YT-Mp3-Downloader/main/public/preview.png" alt="Interfaz">
+</div>
 
 ## Tecnologías Utilizadas
 
