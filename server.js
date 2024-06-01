@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.post("/routes/download", download);
 app.post("/routes/download-file", downloadFile);
 
-// Ruta para servir index.html en la raíz
+// Ruta para servir index.html en la raiz
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });

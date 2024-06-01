@@ -4,6 +4,7 @@ const stream = require("stream");
 
 module.exports = async (req, res) => {
     const videoUrl = req.body.url;
+    const audioBitrate = req.body.bitrate || 128; // Usar 128 kbps si no se proporciona un valor
 
     if (!videoUrl) {
         return res.status(400).send({ error: "URL del video requerida" });
@@ -16,11 +17,11 @@ module.exports = async (req, res) => {
         // Envía temporalmente el nombre del archivo
         res.json({ fileName: `${videoTitle}.mp3` });
 
-        // Luego, comienza la transmisión de audio
+        // Comienza la transmisión de audio
         const audioStream = new stream.PassThrough();
 
         ffmpeg(ytdl(videoUrl, { filter: 'audioonly' }))
-            .audioBitrate(128)
+            .audioBitrate(audioBitrate) // Configura el bitrate del audio
             .format('mp3')
             .pipe(audioStream)
             .pipe(res)
