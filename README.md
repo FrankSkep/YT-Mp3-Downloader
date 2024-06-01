@@ -1,6 +1,6 @@
 # YT_to_MP3 Downloader
 
-Aplicación web que permite descargar archivos de audio en formato MP3 desde videos de YouTube.
+Aplicación web que te permite descargar archivos de audio en formato MP3 desde videos de YouTube.
 
 ## Tecnologías Utilizadas
 
@@ -23,8 +23,8 @@ Aplicación web que permite descargar archivos de audio en formato MP3 desde vid
 El proyecto está organizado en varios directorios y archivos que cumplen diferentes funciones:
 
 *   **Directorio `routes`**:
-    *   **`download.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene informacion del video.
-    *   **`download-file.js`**: Contiene la lógica para manejar la solicitud que transmite el archivo de audio al cliente.
+    *   **`download.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene el título del video.
+    *   **`downloadFile.js`**: Contiene la lógica para manejar la solicitud que transmite el archivo de audio al cliente.
 *   **Directorio `public`**:
     *   **`index.html`**: El archivo HTML principal que sirve como la interfaz de usuario.
     *   **`script.js`**: Contiene el código JavaScript del lado del cliente para manejar el formulario y la descarga.
@@ -37,4 +37,4 @@ El proyecto está organizado en varios directorios y archivos que cumplen difere
     *   **`package.json`**: Contiene las dependencias del proyecto y los scripts de npm.
     *   **`README.md`**: Contiene la documentación del proyecto.
 
-Cada archivo y directorio tiene un propósito específico en el proyecto, facilitando el mantenimiento, escalabilidad y comprensión del código.
+Cada archivo y directorio tiene un propósito específico en el proyecto, facilitando el mantenimiento y la comprensión del código.
