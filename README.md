@@ -26,15 +26,15 @@ Aplicación web que permite descargar archivos de audio en formato MP3 desde vid
 
 El proyecto está organizado en varios directorios y archivos que cumplen diferentes funciones:
 
-*   **Directorio `routes`**:
-    *   **`vid-metadata.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene el título del video.
-    *   **`mp3-download.js`**: Contiene la lógica para manejar la solicitud que transmite el archivo de audio al cliente.
-*   **Directorio `public`**:
+*   **Directorio /node_modules**:
+    *   Contiene todas las dependencias del proyecto, incluidas las bibliotecas de terceros.
+*   **Directorio /routes**:
+    *   **`vid-metadata.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene los metadatos del video.
+    *   **`mp3-download.js`**: Contiene la lógica para manejar la solicitud que convierte a mp3 y transmite el archivo de audio al cliente.
+*   **Directorio /public**:
     *   **`index.html`**: El archivo HTML principal que sirve como la interfaz de usuario.
     *   **`script.js`**: Contiene el código JavaScript del lado del cliente para manejar el formulario y la descarga.
     *   **`styles.css`**: Contiene los estilos CSS para tu interfaz de usuario.
-*   **Directorio `node_modules`**:
-    *   Contiene todas las dependencias del proyecto, incluidas las bibliotecas de terceros.
 *   **Archivo raíz del servidor**:
     *   **`server.js`**: El archivo principal de configuración del servidor Express.
 *   **Otros archivos del proyecto**:
