@@ -1,6 +1,6 @@
 # YT_to_MP3 Downloader
 
-Aplicación web que permite descargar archivos de audio en formato MP3 desde videos de YouTube.
+Aplicación web que permite descargar archivos de audio en formato MP3 en diferentes calidades, desde videos de YouTube.
 
 <div align="center">
    <img src="https://raw.githubusercontent.com/FrankSkep/YT-Mp3-Downloader/main/public/preview.png" alt="Interfaz">
