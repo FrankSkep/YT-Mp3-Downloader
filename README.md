@@ -23,8 +23,8 @@ Aplicación web que te permite descargar archivos de audio en formato MP3 desde 
 El proyecto está organizado en varios directorios y archivos que cumplen diferentes funciones:
 
 *   **Directorio `routes`**:
-    *   **`download.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene el título del video.
-    *   **`downloadFile.js`**: Contiene la lógica para manejar la solicitud que transmite el archivo de audio al cliente.
+    *   **`vid-metadata.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene el título del video.
+    *   **`mp3-download.js`**: Contiene la lógica para manejar la solicitud que transmite el archivo de audio al cliente.
 *   **Directorio `public`**:
     *   **`index.html`**: El archivo HTML principal que sirve como la interfaz de usuario.
     *   **`script.js`**: Contiene el código JavaScript del lado del cliente para manejar el formulario y la descarga.
