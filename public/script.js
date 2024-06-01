@@ -1,3 +1,5 @@
+let videoTitle; // Variable para almacenar el título del video temporalmente
+
 document.getElementById("url").addEventListener("input", function (e) {
     const url = e.target.value;
     if (url) {
@@ -15,6 +17,7 @@ document.getElementById("url").addEventListener("input", function (e) {
             return response.json();
         })
         .then((data) => {
+            videoTitle = data.title; // Almacenar el título del video
             const videoInfoDiv = document.getElementById("video-info");
             videoInfoDiv.innerHTML = `
                 <img src="${data.thumbnail}" alt="Thumbnail" style="width: 100px; height: auto;" />
@@ -55,7 +58,7 @@ document.getElementById("download-form").addEventListener("submit", function (e)
         const a = document.createElement("a");
         a.style.display = "none";
         a.href = url;
-        a.download = `${new Date().getTime()}.mp3`; // Generar nombre de archivo temporal
+        a.download = `${videoTitle}.mp3`; // Utilizar el título del video como nombre del archivo
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
