@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Descargar MP3 de YouTube</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <div class="container">
-            <h1>Descargar MP3 de YouTube</h1>
-            <form id="download-form">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descargar MP3 de YouTube</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube To MP3</h1>
+        <form id="download-form">
+            <div class="input-wrapper">
                 <input
                     type="text"
                     id="url"
                     placeholder="Ingresa la URL del video de YouTube"
                     required
                 />
-                <button type="submit">Descargar</button>
-            </form>
-            <div id="loader" class="loader" style="display: none">
-                <div class="spinner"></div>
-                <span>Convirtiendo...</span>
+                <select id="bitrate">
+                    <option value="128">128 kbps</option>
+                    <option value="192">192 kbps</option>
+                    <option value="256">256 kbps</option>
+                    <option value="320">320 kbps</option>
+                </select>
             </div>
+            <button type="submit">Descargar</button>
+        </form>
+        <div id="loader" class="loader">
+            <div class="progress">
+                <div class="progress-bar"></div> <!-- Añadir la barra de progreso aquí -->
+            </div>
+            <span>Convirtiendo...</span>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
