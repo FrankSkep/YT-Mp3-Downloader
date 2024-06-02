@@ -3,7 +3,7 @@
 Aplicación web que permite descargar videos de youtube en formato MP3 en diferentes calidades.
 
 <div align="center">
-   <img src="https://raw.githubusercontent.com/FrankSkep/YT-Mp3-Downloader/main/public/preview.png" alt="Interfaz">
+   <img src="https://raw.githubusercontent.com/FrankSkep/YT-Mp3-Downloader/main/public/interface.png" alt="Interfaz">
 </div>
 
 ---
