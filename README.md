@@ -30,8 +30,6 @@ Aplicación web que permite descargar videos de youtube en formato MP3 en difere
 
 El proyecto está organizado en varios directorios y archivos que cumplen diferentes funciones:
 
-*   **Directorio /node_modules**:
-    *   Contiene todas las dependencias del proyecto, incluidas las bibliotecas de terceros.
 *   **Directorio /routes**:
     *   **`vid-metadata.js`**: Contiene la lógica para manejar la solicitud inicial que obtiene los metadatos del video.
     *   **`mp3-download.js`**: Contiene la lógica para manejar la solicitud que convierte a mp3 y transmite el archivo de audio al cliente.
