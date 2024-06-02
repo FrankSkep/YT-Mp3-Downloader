@@ -38,7 +38,7 @@ document.getElementById("download-form").addEventListener("submit", function (e)
     const url = document.getElementById("url").value;
     const bitrate = document.getElementById("bitrate").value;
     const loader = document.getElementById("loader");
-    loader.style.display = "block";
+    loader.style.display = "flex"; // Mostrar la barra de progreso
 
     fetch("/routes/mp3-download", {
         method: "POST",
@@ -62,11 +62,11 @@ document.getElementById("download-form").addEventListener("submit", function (e)
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
-        loader.style.display = "none";
+        loader.style.display = "none"; // Ocultar la barra de progreso después de la descarga
     })
     .catch((err) => {
         console.error("Error:", err);
         alert("Error al descargar el archivo. Por favor, intenta de nuevo.");
-        loader.style.display = "none";
+        loader.style.display = "none"; // Ocultar la barra de progreso en caso de error
     });
 });
