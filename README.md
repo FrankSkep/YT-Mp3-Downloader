@@ -20,7 +20,7 @@ Aplicación web que permite descargar videos de youtube en formato MP3 en difere
 
 - **Node.js**: Se utiliza como entorno de ejecución para el servidor.
 - **Express.js**: Se utiliza como framework web para Node.js, proporcionando una estructura y funciones para el desarrollo del servidor.
-- **ytdl-core**: Se utiliza para obtener información y descargar videos de YouTube.
+- **ytdl-core**: Se utiliza para obtener metadatos y descargar videos de YouTube.
 - **fluent-ffmpeg**: Se utiliza para convertir videos descargados a archivos de audio MP3.
 - **stream**: Se utiliza para transmitir el audio procesado al cliente.
 
